@@ -19,11 +19,9 @@ export default function ExperienceAwards() {
                 <div className="flex items-start gap-4">
                   <FaBriefcase className="text-xl text-gray-500 flex-shrink-0 mt-1" />
                   <div className="flex flex-col w-full">
-                    <p className="text-sm">
+                    <p className="text-sm md:whitespace-nowrap">
                       Frontend Engineer at{" "}
-                      <span className="font-bold">
-                        Secured Records Management Solutions Ltd
-                      </span>
+                      <span className="font-bold"> Secured Records Management Solutions Ltd</span>
                     </p>
                     <span className="text-sm text-gray-600 dark:text-gray-400">
                       2024 - Present
@@ -37,9 +35,9 @@ export default function ExperienceAwards() {
                 <div className="flex items-start gap-4">
                   <FaBriefcase className="text-xl text-gray-500 flex-shrink-0 mt-1" />
                   <div className="flex flex-col w-full">
-                    <p className="text-sm">
+                    <p className="text-sm md:whitespace-nowrap">
                       Frontend Developer Intern at{" "}
-                      <span className="font-bold">FlexiSAF Edusoft Limited</span>
+                      <span className="font-bold"> FlexiSAF Edusoft Limited</span>
                     </p>
                     <span className="text-sm text-gray-600 dark:text-gray-400">
                       Jan 2023 - April 2023
@@ -59,13 +57,11 @@ export default function ExperienceAwards() {
                 <div className="flex items-start gap-4">
                   <FaAward className="text-xl text-gray-500 flex-shrink-0 mt-1" />
                   <div className="flex flex-col w-full">
-                    <p className="text-sm">
-                      Hackathon Web Dev{" "}-{" "}
-                      <span className="font-bold">Digital Literacy Champions</span>
+                    <p className="text-sm md:whitespace-nowrap">
+                      Hackathon Web Dev -{" "}
+                      <span className="font-bold"> Digital Literacy Champions</span>
                     </p>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                      Ongoing
-                    </span>
+                    <span className="text-sm text-gray-600 dark:text-gray-400">Ongoing</span>
                   </div>
                 </div>
                 <hr className="border-t border-gray-300 mt-4" />
@@ -75,9 +71,9 @@ export default function ExperienceAwards() {
                 <div className="flex items-start gap-4">
                   <FaAward className="text-xl text-gray-500 flex-shrink-0 mt-1" />
                   <div className="flex flex-col w-full">
-                    <p className="text-sm">
-                      Advanced Diploma in Software Engineering{" "}-{" "}
-                      <span className="font-bold">Aptech Computer Education</span>
+                    <p className="text-sm md:whitespace-nowrap">
+                      Advanced Diploma in Software Engineering -{" "}
+                      <span className="font-bold"> Aptech Computer Education</span>
                     </p>
                     <span className="text-sm text-gray-600 dark:text-gray-400">
                       Sept 2021 - Sept 2023
