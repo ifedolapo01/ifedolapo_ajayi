@@ -9,8 +9,11 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false); // Track if the component is mounted on the client
 
   useEffect(() => {
+    setIsClient(true); // Set to true once mounted on the client
+
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
@@ -40,6 +43,8 @@ export default function Navbar() {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  if (!isClient) return null; // Return null on server-side render to avoid hydration issues
 
   return (
     <nav
