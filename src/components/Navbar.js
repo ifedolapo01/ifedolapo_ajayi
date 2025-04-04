@@ -3,6 +3,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleDarkMode } from "../store/store";
 import { useEffect, useState } from "react";
+import Image from "next/image"; // Import Image from Next.js
 
 export default function Navbar() {
   const darkMode = useSelector((state) => state.theme.darkMode);
@@ -53,7 +54,13 @@ export default function Navbar() {
       }`}
     >
       {/* Logo */}
-      <h1 className="text-xl font-bold">Ifedolapo</h1>
+      <Image
+        src="/name_logo.png"
+        alt="Logo"
+        width={128}
+        height={32}
+        className="object-contain"
+      />
 
       {/* Navbar Links */}
       <div
