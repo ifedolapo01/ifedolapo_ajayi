@@ -8,6 +8,7 @@ export default function Navbar() {
   const darkMode = useSelector((state) => state.theme.darkMode);
   const dispatch = useDispatch();
   const [isMobile, setIsMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -20,6 +21,9 @@ export default function Navbar() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false); // Close menu when resizing to desktop
+      }
     };
 
     handleResize();
@@ -47,7 +51,11 @@ export default function Navbar() {
       <h1 className="text-xl font-bold">Ifedolapo</h1>
 
       {/* Navbar Links */}
-      <div className="flex flex-row gap-6">
+      <div
+        className={`${
+          isMobile ? "flex flex-col items-center absolute top-16 left-0 w-full bg-gray-100 dark:bg-gray-800" : "flex-row gap-6"
+        } ${menuOpen ? "block" : "hidden"} md:flex z-10`}
+      >
         <button onClick={() => scrollToSection("hero")} className="hover:underline">
           Home
         </button>
@@ -62,13 +70,23 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Dark Mode Toggle */}
+      {/* Dark Mode Toggle (Responsive for Small Screens) */}
       <button
         onClick={() => dispatch(toggleDarkMode())}
-        className="p-2 bg-gray-300 dark:bg-gray-600 rounded-md"
+        className="p-2 bg-gray-300 dark:bg-gray-600 rounded-md md:flex hidden"
       >
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
       </button>
+
+      {/* Hamburger Menu for Mobile */}
+      {isMobile && (
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden p-2 text-gray-500 dark:text-white absolute top-4 right-4 z-50"
+        >
+          {menuOpen ? "✖️" : "☰"}
+        </button>
+      )}
     </nav>
   );
 }

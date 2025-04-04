@@ -12,7 +12,7 @@ export default function SelectedWorks() {
     {
       title: "Bus Management App",
       description: "A mobile app for managing bus schedules and ticketing.",
-      image: "/projects/bus-app.png",
+      image: "/cbma_figma.png",
       link: "#",
     },
     {

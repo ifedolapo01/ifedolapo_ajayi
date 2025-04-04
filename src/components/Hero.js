@@ -20,48 +20,78 @@ export default function Hero() {
   }, [darkMode]);
 
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-center text-center md:text-left py-20 px-6 md:px-16 lg:px-24 gap-10 md:gap-20 bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
-      {/* Image */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        className="w-40 h-40 md:w-56 md:h-56 overflow-hidden rounded-full border-4 border-gray-300 dark:border-gray-700"
-      >
-        <Image
-          src="/profile_img.jpg"
-          alt="Profile Picture"
-          width={224}
-          height={224}
-          className="rounded-full"
-        />
-      </motion.div>
-
-      {/* Text Content */}
+    <section className="relative flex flex-col md:flex-row items-center justify-between text-left py-20 px-6 md:px-16 lg:px-24 gap-10 md:gap-20 bg-white dark:bg-black text-black dark:text-white">
+      
+      {/* Left Side - Profile Image & Greeting */}
       <motion.div 
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
+        className="flex flex-col items-start text-left"
       >
-        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
-          Hi, I&apos;m <span className="text-indigo-500">Ifedolapo</span>
+        {/* Profile Image */}
+        <div className="w-16 h-16 md:w-20 md:h-20 overflow-hidden rounded-full border border-gray-300 dark:border-gray-700">
+          <Image
+            src="/profile_img.jpg"
+            alt="Profile Picture"
+            width={80}
+            height={80}
+            className="rounded-full"
+          />
+        </div>
+
+        {/* Greeting */}
+        <h1 className="mt-4 text-4xl md:text-6xl font-semibold leading-tight">
+          Hello! I&apos;m <span className="text-black dark:text-white">Ifedolapo Ajayi</span>
         </h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl">
-          A Frontend Engineer passionate about building seamless digital experiences.
+      </motion.div>
+
+      {/* Right Side - Description, Buttons & Socials */}
+      <motion.div 
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col items-start"
+      >
+        {/* Role & Description */}
+        <h2 className="text-xl md:text-2xl font-semibold">
+          A Frontend Engineer based in Abuja, Nigeria.
+        </h2>
+        <p className="mt-2 text-lg text-gray-600 dark:text-gray-400">
+          Passionate about creating great experiences for digital products.
         </p>
-        <div className="mt-6 flex flex-col md:flex-row gap-4">
-          <Link href="/projects">
-            <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition">
-              See My Work
+
+        {/* Buttons */}
+        <div className="mt-6 flex gap-4">
+          <Link href="/contact">
+            <button className="px-6 py-3 bg-black text-white rounded-lg shadow-md hover:bg-gray-800 transition">
+              Talk with me
             </button>
           </Link>
-          <Link href="/contact">
-            <button className="px-6 py-3 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded-lg shadow-md hover:bg-gray-400 dark:hover:bg-gray-600 transition">
-              Contact Me
+          <Link href="/projects">
+            <button className="px-6 py-3 border border-black dark:border-white text-black dark:text-white rounded-lg shadow-md hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+              See my work
             </button>
           </Link>
         </div>
       </motion.div>
+
+      {/* Social Icons */}
+      <div className="absolute right-6 md:right-10 top-10 flex flex-col gap-4">
+        <Link href="#">
+          <button className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">
+            📷
+          </button>
+        </Link>
+        <Link href="#">
+          <button className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">
+            🌐
+          </button>
+        </Link>
+        <button className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">
+          ❌
+        </button>
+      </div>
     </section>
   );
 }
