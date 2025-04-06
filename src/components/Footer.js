@@ -8,7 +8,7 @@ export default function FooterSection() {
       {/* Talk Section */}
       <section className="text-center my-12">
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Have a project?</p>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">"Let's talk with me"</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">Let&apos;s talk with me</h2>
         <a
           href="mailto:ifedolapoajayi0@gmail.com"
           className="inline-block bg-black text-white dark:bg-white dark:text-black px-5 py-2 rounded-md text-sm font-medium hover:opacity-80 transition"
