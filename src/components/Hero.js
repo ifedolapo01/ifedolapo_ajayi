@@ -63,11 +63,12 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="mt-6 flex gap-4">
-          <Link href="/contact">
-            <button className="px-6 py-3 bg-black text-white rounded-lg shadow-md hover:bg-gray-800 transition">
-              Talk with me
-            </button>
-          </Link>
+          <a
+            href="mailto:ifedolapoajayi0@gmail.com"
+            className="px-6 py-3 bg-black text-white rounded-lg shadow-md hover:bg-gray-800 transition"
+          >
+            Talk with me
+          </a>
           <Link href="/projects">
             <button className="px-6 py-3 border border-black dark:border-white text-black dark:text-white rounded-lg shadow-md hover:bg-gray-100 dark:hover:bg-gray-800 transition">
               See my work
