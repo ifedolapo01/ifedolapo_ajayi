@@ -1,13 +1,24 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux"; // ✅ Import this!
 import { FaBriefcase, FaAward } from "react-icons/fa";
 
 export default function ExperienceAwards() {
+  const darkMode = useSelector((state) => state.theme.darkMode); // ✅ This will now work!
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
     <section
       id="experience"
-      className="py-12 px-6 md:px-12 lg:px-20 bg-[#F5F5F0] text-black dark:text-white"
+      className="py-12 px-6 md:px-12 lg:px-20 bg-[#F5F5F0] text-black dark:bg-gray-900 dark:text-white"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 xl:gap-32">

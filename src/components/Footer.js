@@ -36,8 +36,8 @@ export default function FooterSection() {
         >
           Talk with me
         </a>
-        <p className="text-sm text-gray-500 mt-3">
-          My local time: <span className="underline font-bold text-black">{abujaTime || "Loading..."}</span>
+        <p className="text-sm text-gray-500 mt-3 dark:text-white">
+          My local time: <span className="underline font-bold text-black dark:text-white">{abujaTime || "Loading..."}</span>
         </p>
       </section>
 
