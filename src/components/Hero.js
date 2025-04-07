@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 export default function Hero() {
   const darkMode = useSelector((state) => state.theme.darkMode);
@@ -29,9 +30,8 @@ export default function Hero() {
 
   return (
     <section className="relative flex flex-col md:flex-row items-center justify-between text-left py-20 px-6 md:px-16 lg:px-24 gap-10 md:gap-20 bg-white dark:bg-black text-black dark:text-white">
-      
       {/* Left Side - Profile Image & Greeting */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
@@ -49,12 +49,13 @@ export default function Hero() {
         </div>
 
         <h1 className="mt-4 text-4xl md:text-6xl font-semibold leading-tight">
-          Hello! I&apos;m <span className="text-black dark:text-white">Ifedolapo Ajayi</span>
+          Hello! I&apos;m{" "}
+          <span className="text-black dark:text-white">Ifedolapo Ajayi</span>
         </h1>
       </motion.div>
 
       {/* Right Side - Description, Buttons & Socials */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
@@ -69,11 +70,14 @@ export default function Hero() {
 
         <div className="mt-6 flex gap-4">
           <a
-            href="mailto:ifedolapoajayi0@gmail.com"
-            className="px-6 py-3 bg-black text-white rounded-lg shadow-md hover:bg-gray-800 transition"
+            href="/Ifedolapo-Ajayi-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-black text-white rounded-lg shadow-md hover:bg-gray-800 transition flex items-center gap-2"
           >
-            Talk with me
+            My Resume <FaArrowUpRightFromSquare className="text-sm" />
           </a>
+
           <button
             onClick={() => scrollToSection("selected-works")}
             className="px-6 py-3 border border-black dark:border-white text-black dark:text-white rounded-lg shadow-md hover:bg-gray-100 dark:hover:bg-gray-800 transition"
@@ -84,7 +88,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Social Icons */}
-      <div className="absolute right-6 md:right-10 top-10 flex flex-col gap-4">
+      <div className="absolute right-6 md:right-10 top-8 flex flex-col gap-4">
         <Link
           href="https://www.linkedin.com/in/ifedolapo-ajayi-3500aa1b2/"
           target="_blank"

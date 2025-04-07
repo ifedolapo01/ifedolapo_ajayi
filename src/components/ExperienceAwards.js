@@ -51,7 +51,7 @@ export default function ExperienceAwards() {
 
           {/* Awards & Recognition */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Awards & Recognition</h3>
+            <h3 className="text-2xl font-semibold mb-6">Awards & Certifications</h3>
             <div className="space-y-10">
               <div className="relative">
                 <div className="flex items-start gap-4">

@@ -82,7 +82,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Dark Mode Toggle (Responsive for Small Screens) */}
+      {/* Dark Mode Toggle */}
       <button
         onClick={() => dispatch(toggleDarkMode())}
         className="p-2 bg-gray-300 dark:bg-gray-600 rounded-md md:flex hidden"

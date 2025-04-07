@@ -18,10 +18,10 @@ export default function FooterSection() {
       setAbujaTime(formatter.format(new Date()));
     };
 
-    updateTime(); // Set initially
-    const interval = setInterval(updateTime, 1000); // Update every second
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
 
-    return () => clearInterval(interval); // Clean up
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -44,16 +44,15 @@ export default function FooterSection() {
       {/* Footer */}
       <footer className="bg-white dark:bg-black text-black dark:text-white px-4 py-6 mt-10">
         <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4 md:gap-0">
-          {/* Left: Name and Role */}
+          
           <div className="text-center md:text-left">
             <h2 className="text-base font-semibold">Ifedolapo</h2>
             <p className="text-sm text-gray-500 dark:text-gray-400">Frontend Engineer | Mobile Developer</p>
           </div>
 
-          {/* Right: Links */}
           <div className="flex gap-4 text-sm">
             <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/playground" className="hover:underline">ExperienceAwards</Link>
+            <Link href="/playground" className="hover:underline">Experience & Awards</Link>
             <Link href="/services" className="hover:underline">Services</Link>
             <Link href="/case-studies" className="hover:underline">Contact</Link>
           </div>
