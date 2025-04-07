@@ -82,23 +82,38 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Dark Mode Toggle */}
-      <button
-        onClick={() => dispatch(toggleDarkMode())}
-        className="p-2 bg-gray-300 dark:bg-gray-600 rounded-md md:flex hidden"
-      >
-        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-      </button>
+      {/* Dark Mode Toggle and Hamburger Menu */}
+      <div className="flex items-center space-x-4">
+        {/* Mobile Dark Mode Toggle */}
+        {isMobile && (
+          <button
+            onClick={() => dispatch(toggleDarkMode())}
+            className="p-2 text-gray-500 dark:text-white md:hidden"
+          >
+            {darkMode ? "☀️" : "🌙"}
+          </button>
+        )}
 
-      {/* Hamburger Menu for Mobile */}
-      {isMobile && (
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-gray-500 dark:text-white absolute top-4 right-4 z-50"
-        >
-          {menuOpen ? "✖️" : "☰"}
-        </button>
-      )}
+        {/* Hamburger Menu for Mobile */}
+        {isMobile && (
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 text-gray-500 dark:text-white md:hidden"
+          >
+            {menuOpen ? "✖️" : "☰"}
+          </button>
+        )}
+
+        {/* Desktop Dark Mode Toggle */}
+        {!isMobile && (
+          <button
+            onClick={() => dispatch(toggleDarkMode())}
+            className="p-2 bg-gray-300 dark:bg-gray-600 rounded-md md:flex hidden"
+          >
+            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+          </button>
+        )}
+      </div>
     </nav>
   );
 }
