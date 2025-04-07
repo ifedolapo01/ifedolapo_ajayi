@@ -88,7 +88,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Social Icons */}
-      <div className="absolute right-6 md:right-10 top-8 flex flex-col gap-4">
+      <div className="absolute right-6 md:right-10 top-6 flex flex-col gap-4">
         <Link
           href="https://www.linkedin.com/in/ifedolapo-ajayi-3500aa1b2/"
           target="_blank"
