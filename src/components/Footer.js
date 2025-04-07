@@ -51,10 +51,10 @@ export default function FooterSection() {
           </div>
 
           <div className="flex gap-4 text-sm">
-            <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/playground" className="hover:underline">Experience & Awards</Link>
-            <Link href="/services" className="hover:underline">Services</Link>
-            <Link href="/case-studies" className="hover:underline">Contact</Link>
+            <button onClick={() => scrollToSection("hero")} className="hover:underline">Home</button>
+            <button onClick={() => scrollToSection("experience-awards")} className="hover:underline">Experience & Awards</button>
+            <button onClick={() => scrollToSection("services")} className="hover:underline">Services</button>
+            <button onClick={() => scrollToSection("contact")} className="hover:underline">Contact</button>
           </div>
         </div>
       </footer>
