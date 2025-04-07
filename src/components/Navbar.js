@@ -3,17 +3,17 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleDarkMode } from "../store/store";
 import { useEffect, useState } from "react";
-import Image from "next/image"; // Import Image from Next.js
+import Image from "next/image";
 
 export default function Navbar() {
   const darkMode = useSelector((state) => state.theme.darkMode);
   const dispatch = useDispatch();
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false); // Track if the component is mounted on the client
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Set to true once mounted on the client
+    setIsClient(true);
 
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -26,7 +26,7 @@ export default function Navbar() {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
       if (window.innerWidth >= 768) {
-        setMenuOpen(false); // Close menu when resizing to desktop
+        setMenuOpen(false);
       }
     };
 
@@ -45,7 +45,7 @@ export default function Navbar() {
     }
   };
 
-  if (!isClient) return null; // Return null on server-side render to avoid hydration issues
+  if (!isClient) return null;
 
   return (
     <nav
