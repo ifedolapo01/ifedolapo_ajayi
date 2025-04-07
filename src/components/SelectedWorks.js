@@ -15,6 +15,12 @@ export default function SelectedWorks() {
       image: "/portfolio_img.png",
       link: "https://ifedolapoajayi.vercel.app/",
     },
+    {
+      title: "Damled Ecommerce App Design",
+      description: "A clean and user-friendly e-commerce app UI designed to enhance shopping experience and improve customer engagement.",
+      image: "/pf_dam_ecom.png",
+      link: "https://www.figma.com/design/P3DAKebFzEOoSDvr8tjRTO/Damled-Ecommerce-App-UI-(Copy)?node-id=0-1&t=ikPlu9LojQw2ABkT-1",
+    },    
   ];
 
   return (
