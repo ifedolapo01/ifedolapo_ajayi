@@ -1,8 +1,29 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function FooterSection() {
+  const [abujaTime, setAbujaTime] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const formatter = new Intl.DateTimeFormat("en-NG", {
+        timeZone: "Africa/Lagos",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true,
+      });
+      setAbujaTime(formatter.format(new Date()));
+    };
+
+    updateTime(); // Set initially
+    const interval = setInterval(updateTime, 1000); // Update every second
+
+    return () => clearInterval(interval); // Clean up
+  }, []);
+
   return (
     <div>
       {/* Talk Section */}
@@ -16,7 +37,7 @@ export default function FooterSection() {
           Talk with me
         </a>
         <p className="text-sm text-gray-500 mt-3">
-          My social link: <span className="underline">ui.brook.gra</span>
+          My local time: <span className="underline font-bold text-black">{abujaTime || "Loading..."}</span>
         </p>
       </section>
 
@@ -32,9 +53,9 @@ export default function FooterSection() {
           {/* Right: Links */}
           <div className="flex gap-4 text-sm">
             <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/playground" className="hover:underline">Playground</Link>
+            <Link href="/playground" className="hover:underline">ExperienceAwards</Link>
             <Link href="/services" className="hover:underline">Services</Link>
-            <Link href="/case-studies" className="hover:underline">Case studies</Link>
+            <Link href="/case-studies" className="hover:underline">Contact</Link>
           </div>
         </div>
       </footer>
