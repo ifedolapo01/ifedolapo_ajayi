@@ -5,7 +5,7 @@ export default function SelectedWorks() {
   const projects = [
     {
       title: "Urban Threads Ecommerce App",
-      description: "A mobile app for seamless online shopping experience.",
+      description: "An ecommerce web application for buying and selling fashion products.",
       image: "/urbanthreads_img.png",
       link: "https://urbanthreads-kappa.vercel.app/",
     },
