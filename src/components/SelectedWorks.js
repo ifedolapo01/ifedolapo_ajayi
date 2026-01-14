@@ -4,6 +4,12 @@ import Link from "next/link";
 export default function SelectedWorks() {
   const projects = [
     {
+      title: "Urban Threads Ecommerce App",
+      description: "A mobile app for seamless online shopping experience.",
+      image: "/urbanthreads_img.png",
+      link: "https://urbanthreads-kappa.vercel.app/",
+    },
+    {
       title: "Bus Management App",
       description: "A mobile app for managing bus schedules and ticketing.",
       image: "/cbma_figma.png",
