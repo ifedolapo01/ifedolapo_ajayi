@@ -10,10 +10,10 @@ export default function SelectedWorks() {
       link: "https://urbanthreads-kappa.vercel.app/",
     },
     {
-      title: "DimgadCare Medical App",
+      title: "GidiamCare Medical App",
       description: "A medical app for managing patient records and appointments.",
-      image: "/dimgadcare_img.png",
-      link: "https://dimgadcare.vercel.app/",
+      image: "/gidiamcare_img.png",
+      link: "https://gidiamcare.vercel.app/",
     },
     {
       title: "Bus Management App",
