@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #6b21a8; /* purple */
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #111827; /* Tailwind gray-900 */
+  --color-text-light: #000000;
+  --color-text-dark: #ffffff;
+}
+
 html {
   @apply bg-white text-black transition-colors duration-300;
 }

@@ -72,7 +72,7 @@ export default function ExperienceAwards() {
                       Hackathon Web Dev -{" "}
                       <span className="font-bold"> Digital Literacy Champions</span>
                     </p>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Ongoing</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-400">Aug 2024 - Aug 2025</span>
                   </div>
                 </div>
                 <hr className="border-t border-gray-300 mt-4" />

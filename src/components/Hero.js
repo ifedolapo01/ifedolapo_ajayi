@@ -70,7 +70,7 @@ export default function Hero() {
 
         <div className="mt-6 flex gap-4">
           <a
-            href="/Ifedolapo-Ajayi-Resume.pdf"
+            href="/Ifedolapo-Ajayi-Frontend-Developer-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-black text-white rounded-lg shadow-md hover:bg-gray-800 transition flex items-center gap-2"

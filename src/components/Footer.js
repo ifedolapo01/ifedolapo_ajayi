@@ -1,43 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 export default function FooterSection() {
-  const [abujaTime, setAbujaTime] = useState("");
-
-  useEffect(() => {
-    const updateTime = () => {
-      const formatter = new Intl.DateTimeFormat("en-NG", {
-        timeZone: "Africa/Lagos",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-        hour12: true,
-      });
-      setAbujaTime(formatter.format(new Date()));
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div>
       {/* Talk Section */}
       <section className="text-center my-12">
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Have a project?</p>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">Let&apos;s talk with me</h2>
         <a
           href="mailto:ifedolapoajayi0@gmail.com"
           className="inline-block bg-black text-white dark:bg-white dark:text-black px-5 py-2 rounded-md text-sm font-medium hover:opacity-80 transition"
         >
           Talk with me
         </a>
-        <p className="text-sm text-gray-500 mt-3 dark:text-white">
-          My local time: <span className="underline font-bold text-black dark:text-white">{abujaTime || "Loading..."}</span>
-        </p>
       </section>
 
       {/* Footer */}
@@ -51,8 +25,9 @@ export default function FooterSection() {
 
           <div className="flex gap-4 text-sm">
             <button onClick={() => scrollToSection("hero")} className="hover:underline">Home</button>
-            <button onClick={() => scrollToSection("experience-awards")} className="hover:underline">Experience & Awards</button>
+            <button onClick={() => scrollToSection("experience-awards")} className="hover:underline">Experience</button>
             <button onClick={() => scrollToSection("services")} className="hover:underline">Services</button>
+            <button onClick={() => scrollToSection("selected-works")} className="hover:underline">Projects</button>
             <button onClick={() => scrollToSection("contact")} className="hover:underline">Contact</button>
           </div>
         </div>

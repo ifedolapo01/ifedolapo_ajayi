@@ -4,16 +4,21 @@ import Link from "next/link";
 export default function SelectedWorks() {
   const projects = [
     {
+      title: "Beyond the Pain",
+      description: "A digital platform to share and read real stories of living with Sickle cell disease, fostering empathy, support, and community awareness.",
+      image: "/beyondthepain_img.png",
+      link: "https://beyondthepain.vercel.app/",
+    },
+    {
       title: "Urban Threads Ecommerce App",
       description: "An ecommerce web application for buying and selling fashion products.",
       image: "/urbanthreads_img.png",
       link: "https://urbanthreads-kappa.vercel.app/",
     },
     {
-      title: "GidiamCare Medical App",
+      title: "Telemedicine Website",
       description: "A medical app for managing patient records and appointments.",
       image: "/gidiamcare_img.png",
-      link: "https://gidiamcare.vercel.app/",
     },
     {
       title: "Bus Management App",
@@ -38,7 +43,7 @@ export default function SelectedWorks() {
   return (
     <section className="py-16 bg-[#F5F5F0] dark:bg-gray-900 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white">Selected Works</h2>
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white">My Projects</h2>
         <p className="text-gray-600 dark:text-gray-300 mt-2">A glimpse of some of my projects</p>
       </div>
 
@@ -55,7 +60,15 @@ export default function SelectedWorks() {
             <div className="p-4">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
               <p className="text-gray-600 dark:text-gray-300 mt-2">{project.description}</p>
-              <Link href={project.link} className="text-blue-500 dark:text-blue-400 font-medium mt-4 inline-block">View Project →</Link>
+              {project.link ? (
+                <Link href={project.link} className="text-blue-500 dark:text-blue-400 font-medium mt-4 inline-block">
+                  View Project →
+                </Link>
+              ) : (
+                <span className="text-gray-400 dark:text-gray-500 font-medium mt-4 inline-block">
+                  Coming Soon
+                </span>
+              )}
             </div>
           </div>
         ))}

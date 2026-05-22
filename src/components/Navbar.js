@@ -72,10 +72,13 @@ export default function Navbar() {
           Home
         </button>
         <button onClick={() => scrollToSection("experience-awards")} className="hover:underline">
-          Experience & Awards
+          Experience
         </button>
         <button onClick={() => scrollToSection("services")} className="hover:underline">
           Services
+        </button>
+        <button onClick={() => scrollToSection("selected-works")} className="hover:underline">
+          Projects
         </button>
         <button onClick={() => scrollToSection("contact")} className="hover:underline">
           Contact

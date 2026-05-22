@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "rimraf .next && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
+    "@vercel/analytics": "^1.6.1",
     "framer-motion": "^12.6.2",
     "next": "15.2.8",
     "react": "^19.0.0",
