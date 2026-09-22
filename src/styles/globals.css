@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply bg-white text-black transition-colors duration-300 font-sans dark:bg-black dark:text-white;
+}
+
+body {
+  @apply bg-inherit;
+}
