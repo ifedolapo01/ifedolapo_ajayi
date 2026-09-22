@@ -53,7 +53,7 @@ export interface Post {
   /** Present-tense for current work, past for finished. */
   summary: string;
   detail: string[];
-  kind: "work" | "study";
+  kind: "work" | "study" | "service";
 }
 
 export interface SectionMeta {

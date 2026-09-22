@@ -61,7 +61,7 @@ export function Contact() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="group flex items-baseline justify-between gap-4 py-4 sm:flex-col sm:items-start sm:gap-2 sm:px-5 sm:py-6 sm:first:pl-0"
+                  className="group flex items-baseline justify-between gap-4 py-5 sm:flex-col sm:items-start sm:gap-3 sm:px-5 sm:py-9 sm:first:pl-0"
                 >
                   <span className="label transition-colors group-hover:text-vermilion">
                     {item.label}

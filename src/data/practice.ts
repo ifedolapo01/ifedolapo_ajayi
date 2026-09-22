@@ -33,7 +33,6 @@ export const practice = {
   now: [
     { field: "Based in", value: "Abuja, Nigeria" },
     { field: "Currently", value: "Frontend Engineer, Secured Records Management Solutions" },
-    { field: "Learning", value: "[[what you're working through at the moment]]" },
-    { field: "Open to", value: "[[frontend roles / freelance / collaborations: your call]]" },
+    { field: "Open to", value: "Frontend roles, freelance work and collaborations" },
   ],
 } as const;

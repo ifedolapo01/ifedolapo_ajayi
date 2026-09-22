@@ -1,3 +1,4 @@
+import type { Post } from "@/types";
 import { record } from "@/data/record";
 import { SectionShell } from "@/components/sheet/Sheet";
 import { Reveal } from "@/components/sheet/Reveal";
@@ -9,16 +10,26 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const KIND_LABEL: Record<Post["kind"], string> = {
+  work: "Employment",
+  study: "Study",
+  service: "NYSC CDS",
+};
+
 /**
  * Experience as a record sheet: dates in the margin in tabular figures, the
- * role set large, the detail folded away until it is wanted. A recruiter can
- * read the whole history in one pass without opening anything: that is the
- * point of a résumé. They can still open the one entry they care about.
+ * role set large. Every entry starts open, so a recruiter can read the whole
+ * history in one pass without clicking anything; anyone who wants a shorter
+ * read can still collapse an entry themselves.
  */
 export function Record() {
   return (
     <SectionShell id="record" index="04" title="Record" runningHead="Where the time went" tone="deep">
-      <Accordion type="single" collapsible defaultValue="srms" className="border-t border-ink">
+      <Accordion
+        type="multiple"
+        defaultValue={record.map((post) => post.id)}
+        className="border-t border-ink"
+      >
         {record.map((post, i) => (
           <Reveal key={post.id} delay={i * 60}>
             <AccordionItem value={post.id}>
@@ -35,9 +46,7 @@ export function Record() {
                       <span className="px-2 text-rule" aria-hidden>
                         ·
                       </span>
-                      <span className="label-sm font-mono uppercase">
-                        {post.kind === "work" ? "Employment" : "Study"}
-                      </span>
+                      <span className="label-sm font-mono uppercase">{KIND_LABEL[post.kind]}</span>
                     </p>
                   </div>
                 </div>
