@@ -24,25 +24,25 @@ export const projects: Project[] = [
     premise:
       "Sickle cell disease is common in Nigeria and badly understood by people who don't live with it. Beyond the Pain is a digital platform for sharing and reading real accounts of living with it, built so that the writing, not the interface, is what you notice.",
     build: [
-      "Built the full front end in Next.js and Tailwind CSS, with Firebase (Firestore and Storage) behind the submission form.",
-      "Stories come in through a public form, not a CMS or a spreadsheet: writers submit directly, with an optional photo or short video, straight to Firestore.",
-      "Story text is set in serif with generous leading and a quiet left accent border, deliberately distinct from the sans-serif interface around it, so the writing reads like writing rather than another screen.",
-      "The hardest part was the \"Experience this story\" mode: a full-screen reader with a generative ambient soundscape built from raw Web Audio oscillators, tuned to an E-minor pentatonic scale and faded in procedurally. No audio files, no network requests.",
+      "Built the front end in Next.js and Tailwind CSS, with Firebase handling the database and file storage behind the submission form.",
+      "Stories come in through a public form, not a spreadsheet or someone typing them in by hand: writers submit their own story, with an optional photo or short video, straight into the database.",
+      "The story text itself is set apart from the rest of the interface: a different, more book-like typeface and more room between lines, so the words feel like they're being read rather than scrolled past.",
+      "The most interesting thing to build was \"Experience this story\": a full-screen reading mode with a calm, generated soundtrack that plays as you read. It's created entirely in the browser rather than using audio files, so nothing has to download and no two visits sound quite the same.",
     ],
     annotations: [
       {
         id: "btp-a",
         x: 49,
         y: 74,
-        title: "Two calls to action, not one funnel",
-        body: "\"Share Your Journey\" goes straight to the submission form; \"Explore Knowledge Hub\" goes to resources. Equal visual weight on purpose: someone arriving here might want to write, or might just want to read and feel less alone.",
+        title: "Two ways in, not one path",
+        body: "\"Share Your Journey\" goes straight to the submission form; \"Explore Knowledge Hub\" goes to a resource library instead. Equal visual weight on purpose: someone arriving here might want to write, or might just want to read and feel less alone.",
       },
       {
         id: "btp-b",
         x: 90,
         y: 83,
         title: "Five photos, five captions",
-        body: "The background is a five-slide rotation, not one static image, each slide with its own caption and its own mobile crop swapped in under 768px, so a face stays framed instead of just being a squeezed desktop photo.",
+        body: "The background isn't one static photo: it's five images that rotate, each with its own caption and each has its own version cropped specifically for phones so a face doesn't get squeezed or cut off on a small screen.",
       },
     ],
     layout: "spread",
@@ -56,8 +56,8 @@ export const projects: Project[] = [
     role: "Sole developer",
     stack: ["Next.js", "TypeScript", "Supabase", "Paystack"],
     discipline: "Product",
-    link: "[[current live URL for GidiamMini]]",
-    linkLabel: "[[link label]]",
+    link: "https://gidiammini.vercel.app/",
+    linkLabel: "gidiammini.vercel.app",
     image: "/urbanthreads_img.png",
     // This screenshot predates the rename: it's the storefront under its old
     // "UrbanThreads Co." branding. The product underneath has grown a great
@@ -65,12 +65,12 @@ export const projects: Project[] = [
     // there's one to hand.
     imageAlt: "The storefront's homepage, shown here under its earlier UrbanThreads Co. branding.",
     premise:
-      "GidiamMini is a boutique e-commerce site for baby clothing, kids' wear and maternity essentials, built to run more than one store: every table is scoped to a store id enforced in Postgres itself, not just filtered by the interface. Customers can pay by card through Paystack or by bank transfer, uploading a receipt afterwards; an OCR pass then reads a candidate amount and reference off that receipt as an editable suggestion. Whoever verifies the payment can always overwrite it before confirming.",
+      "GidiamMini is a boutique online shop for baby clothing, kids' wear and maternity essentials, built so it can run several stores at once, each one's data kept completely separate from the others, not just hidden by how a screen is laid out. Customers can pay by card, or by bank transfer with a receipt they upload afterwards. When a receipt comes in, the system reads the amount and reference number off it automatically and fills them in, but always as a suggestion a person checks: the final say is never left to the software alone.",
     build: [
-      "Built with Next.js and TypeScript, with Supabase (Postgres) behind it and store-level data isolation enforced by row-level security in the database itself, not just filtered in application code.",
-      "Card payments run through Paystack. Bank transfers are verified from an uploaded receipt instead, with OCR suggesting the amount and reference as an editable guess; whoever verifies the payment can always overwrite it.",
-      "The cart survives more than a refresh: an abandoned one can be captured and reopened later from a resume link. Prices and stock are never trusted from the client either, they're re-checked server-side at checkout, so a stale price sitting in someone's browser is never what gets charged.",
-      "Getting store isolation right was the trickiest part: one store's admin should never see another store's orders, even by accident. A standalone script creates real rows for two separate stores and proves neither can read the other's; the fix that made it true lives in a single migration.",
+      "Built with Next.js and TypeScript, backed by Supabase for the database. Each store's information is kept apart at the database level itself, not just hidden by what a particular screen shows, so one store can never accidentally see another's data.",
+      "Card payments go through Paystack. For bank transfers, the buyer uploads a receipt and the system reads the amount and reference off it automatically as a first guess, one a person always checks and can correct before it's approved.",
+      "The cart survives more than closing the tab: if someone leaves without buying, it can be picked up again later from a link. Prices and stock are also double-checked again at the moment of payment, not just trusted from whatever the shopper's browser last showed, so nobody is ever charged an old price by mistake.",
+      "Because more than one store shares the same system, keeping their information separate was treated as essential from day one, not an afterthought. An automated check runs against the real database and confirms, every time, that one store genuinely cannot see another's orders or customers.",
     ],
     annotations: [
       {
@@ -78,14 +78,14 @@ export const projects: Project[] = [
         x: 30,
         y: 38,
         title: "An older name on an older screenshot",
-        body: "This is the pre-rename homepage. The storefront has since become a multi-store platform with its own payment verification; the build notes below describe what's actually running now.",
+        body: "This screenshot is from before the rename. The shop itself has grown a lot since then: see the notes below for what it actually does now.",
       },
       {
         id: "ut-b",
         x: 50,
         y: 88,
         title: "Featured Products",
-        body: "The same card pattern runs across the storefront: image, name, price, one clear action, so a shopper never has to learn a new layout between the homepage and a category page.",
+        body: "Every product is shown the same way everywhere on the site, a picture, the name, the price, one clear button, so shoppers never have to learn a new layout moving from the homepage into a category.",
       },
     ],
     layout: "offset",
@@ -97,19 +97,17 @@ export const projects: Project[] = [
     tagline: "Records and appointments, for people who are already worried.",
     year: "2026",
     role: "Sole developer",
-    stack: ["Next.js", "TypeScript", "Supabase", "Socket.IO"],
+    stack: ["Next.js", "TypeScript", "Supabase"],
     discipline: "Product",
-    link: "[[current live URL for GidiamCare, if there is one]]",
-    linkLabel: "[[link label]]",
     image: "/gidiamcare_img.png",
     imageAlt: "The GidiamCare homepage: a hospital management system with separate patient, doctor and admin dashboards.",
     premise:
-      "GidiamCare is a hospital management system built around three different people needing three different things from the same records: a patient checking results, a doctor between appointments and an admin running the building. Each gets its own dashboard, gated by role at the database level, not just hidden behind a tab in the interface.",
+      "GidiamCare is a hospital management system built around three different people who need three different things from the same records: a patient checking their results, a doctor moving between appointments and an admin running the building. Each one gets their own dashboard. What they're allowed to see is enforced by the system itself, not just hidden behind a tab someone could click past.",
     build: [
-      "Built with Next.js, TypeScript and Supabase, with patient, doctor and admin as three separate areas, each behind its own auth guard and its own row-level security policy.",
-      "An appointment can become a live video consultation over Socket.IO, but only after the patient accepts a telehealth consent screen. Consent is asked every time, never assumed just because a call was requested.",
-      "Dense clinical information (lab results, prescriptions, hospital-stay and transfusion logs) gets its own screen per role instead of one shared table: what a doctor needs to scan in ten seconds is not what a patient needs to sit with.",
-      "[[Current status: in progress, paused, shipped internally, live for real patients?]]",
+      "Built with Next.js, TypeScript and Supabase. Patient, doctor and admin are three completely separate areas of the app, each one checking who's signed in and only letting in the people who should be there.",
+      "An appointment can turn into a live video call with a doctor, right inside the app. Before any call starts, the patient has to actively agree to it on a consent screen, every time: it's never just assumed because a call was requested.",
+      "There's a lot of dense medical information (lab results, prescriptions, hospital stays, blood transfusion records) and each role sees it laid out differently. What a doctor needs to scan in ten seconds isn't what a patient needs to sit and read carefully.",
+      "Still a work in progress: the pieces above are built and working, but it isn't a finished, publicly live product yet.",
     ],
     annotations: [
       {
@@ -117,14 +115,14 @@ export const projects: Project[] = [
         x: 50,
         y: 60,
         title: "One login, three dashboards",
-        body: "Patient, doctor and admin are separate areas behind Supabase auth with row-level security, not one dashboard with hidden tabs. What renders after signing in depends on the role stored in the database, not a flag in the browser.",
+        body: "Patient, doctor and admin are three separate areas, not one dashboard with hidden tabs other people could stumble into. What you see after signing in depends on who you actually are, checked by the system itself.",
       },
       {
         id: "gc-b",
         x: 50,
         y: 88,
         title: "A call, gated behind consent",
-        body: "Book Appointment can lead to a live video consultation over Socket.IO, but a telehealth consent screen has to be accepted first, every time, not assumed just because a call was requested.",
+        body: "Booking an appointment can lead to a live video call with a doctor, but a consent screen has to be accepted first, every time, never assumed just because a call was requested.",
       },
     ],
     layout: "pair",
