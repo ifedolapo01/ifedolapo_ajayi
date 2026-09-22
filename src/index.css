@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   TEARDOWN — foundations
+   Two inks on paper. "Paper" is the default; "Ink" inverts the stock, not
+   the concept — the vermilion annotation ink stays the annotation ink.
+   ========================================================================== */
+
+@layer base {
+  :root {
+    --paper: 44 33% 94%;         /* warm uncoated stock            */
+    --paper-deep: 42 25% 89%;    /* the next section down the page */
+    --paper-raised: 44 40% 97%;  /* a plate laid on the sheet      */
+    --ink: 60 5% 10%;            /* warm black, never #000         */
+    --graphite: 43 9% 35%;       /* secondary text — clears 4.5:1 on both stocks */
+    --vermilion: 15 79% 39%;     /* annotation ink. Used sparingly */
+    --rule: 45 12% 76%;          /* hairlines                      */
+
+    --sheet-gutter: 1.25rem;
+    color-scheme: light;
+  }
+
+  .dark {
+    --paper: 48 8% 8%;
+    --paper-deep: 48 8% 6%;
+    --paper-raised: 45 7% 12%;
+    --ink: 44 28% 92%;
+    --graphite: 44 10% 68%;
+    --vermilion: 15 80% 55%;     /* lifted so it still passes on dark stock */
+    --rule: 45 6% 26%;
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-rule;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* The rail and the mobile marker must never cover an anchored heading. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* One focus treatment for the entire site: a vermilion draughtsman's box. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-vermilion ring-offset-2 ring-offset-paper;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    @apply bg-vermilion text-paper;
+  }
+
+  h1, h2, h3 {
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* --- Typographic roles -------------------------------------------------- */
+
+  /* Every number, field name and annotation on the site. The voice of the
+     drawing, as opposed to the voice of the writing. */
+  .label {
+    @apply font-mono text-label uppercase text-graphite;
+  }
+  .label-ink { @apply label text-ink; }
+  .label-mark { @apply label text-vermilion; }
+
+  /* Display type is set tight and slightly negative — headlines are objects,
+     not sentences. */
+  .display {
+    @apply font-display font-normal leading-[0.92] tracking-[-0.025em];
+    font-variation-settings: "SOFT" 0, "WONK" 1;
+  }
+
+  .prose-sheet {
+    @apply max-w-measure text-[1.0625rem] leading-[1.7] text-graphite md:text-lg;
+  }
+  .prose-sheet strong { @apply font-medium text-ink; }
+
+  /* --- Sheet furniture ---------------------------------------------------- */
+
+  /* The vertical hairlines that bound the drawing area. Decoration with a
+     job: they make the grid legible, which is the whole argument of the site. */
+  .sheet-edge {
+    @apply pointer-events-none absolute inset-y-0 hidden w-px bg-rule lg:block;
+  }
+
+  .hairline { @apply h-px w-full bg-rule; }
+
+  /* --- Fill-in fields ----------------------------------------------------- */
+
+  /* Content Ifedolapo still needs to supply is shown as an unfilled field on
+     a form, not hidden. Honest, and on-concept. */
+  .field-blank {
+    @apply font-mono text-[0.9em] text-graphite decoration-dotted underline-offset-4;
+    text-decoration-line: underline;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  /* Tabular figures for every date, number and measurement. */
+  .nums { font-variant-numeric: tabular-nums; }
+}
+
+/* ==========================================================================
+   SCHEMATIC MODE
+   The same component tree renders twice inside the workbench: once as built,
+   once as drawn. Rather than maintaining two component trees that would drift
+   apart, the schematic layer is the *same* markup under a data attribute —
+   so the x-ray can never show you a lie about the structure.
+   ========================================================================== */
+
+[data-variant="schematic"] {
+  --schematic-line: hsl(var(--vermilion) / 0.55);
+}
+
+[data-variant="schematic"] * {
+  color: hsl(var(--graphite)) !important;
+  background-image: none !important;
+}
+
+/* Every box in the tree gets its outline drawn. */
+[data-variant="schematic"] [data-part] {
+  background-color: transparent !important;
+  border-color: var(--schematic-line) !important;
+  border-width: 1px !important;
+  border-style: dashed !important;
+  box-shadow: none !important;
+  position: relative;
+}
+
+/* …and labelled with the component name, the way a drawing is annotated. */
+[data-variant="schematic"] [data-part]::before {
+  content: attr(data-part);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  padding: 0 3px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--vermilion));
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Content that is purely visual in the built version becomes hatching in the
+   drawn version — it is mass, not information. */
+[data-variant="schematic"] [data-fill] {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--schematic-line) 0 1px,
+    transparent 1px 5px
+  ) !important;
+  color: transparent !important;
+}
+
+[data-variant="schematic"] [data-chip] {
+  border-radius: 0 !important;
+}

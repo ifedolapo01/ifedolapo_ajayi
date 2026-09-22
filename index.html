@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16150F" media="(prefers-color-scheme: dark)" />
+
+    <title>Ifedolapo Ajayi — Frontend Engineer, Abuja</title>
+    <meta
+      name="description"
+      content="Frontend engineer in Abuja building the layer people actually touch. Interfaces taken apart: Beyond the Pain, Urban Threads, a telemedicine platform and more."
+    />
+    <link rel="canonical" href="https://ifedolapoajayi.vercel.app/" />
+    <meta name="author" content="Ifedolapo Ajayi" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ifedolapo Ajayi — Frontend Engineer" />
+    <meta
+      property="og:description"
+      content="Every interface you like is hiding work. Frontend engineer in Abuja — interfaces, taken apart."
+    />
+    <meta property="og:url" content="https://ifedolapoajayi.vercel.app/" />
+    <meta property="og:image" content="https://ifedolapoajayi.vercel.app/plates/profile_img-760.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Three faces, three jobs. Loaded in one request, swapped in immediately. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap"
+    />
+
+    <!-- Applied before first paint so the chosen stock never flashes. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("teardown-stock");
+          var dark =
+            stored === "ink" ||
+            (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ifedolapo Ajayi",
+        "jobTitle": "Frontend Engineer",
+        "url": "https://ifedolapoajayi.vercel.app",
+        "email": "mailto:ifedolapoajayi0@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Abuja", "addressCountry": "NG" },
+        "sameAs": [
+          "https://github.com/ifedolapo01",
+          "https://www.linkedin.com/in/ifedolapo-ajayi-3500aa1b2/"
+        ],
+        "knowsAbout": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "UI design"]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
