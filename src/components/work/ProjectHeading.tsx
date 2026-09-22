@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/types";
 import { Fill } from "@/components/sheet/Fill";
+import { isBlank } from "@/lib/fill";
 import { cn } from "@/lib/utils";
 
 export function ProjectHeading({ project, size = "lg" }: { project: Project; size?: "lg" | "md" }) {
@@ -39,6 +40,18 @@ export function ProjectLink({ project }: { project: Project }) {
       <p className="label inline-flex items-center gap-2 border-b border-rule pb-1.5">
         <span className="inline-block h-1.5 w-1.5 rounded-full bg-graphite" aria-hidden />
         Not publicly available
+      </p>
+    );
+  }
+
+  // A link that's still an unfilled field ("[[current live URL]]") is a note
+  // to fill in, not a real href: sending it to <a> would point the browser
+  // at a literal bracketed string. Show the blank instead of a broken link.
+  if (isBlank(project.link)) {
+    return (
+      <p className="label inline-flex items-center gap-2 border-b border-rule pb-1.5">
+        <span className="inline-block h-1.5 w-1.5 rounded-full bg-vermilion" aria-hidden />
+        <Fill text={project.link} />
       </p>
     );
   }

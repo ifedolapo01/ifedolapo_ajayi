@@ -1,6 +1,5 @@
 import { Fragment } from "react";
-
-const FIELD = /\[\[(.+?)\]\]/g;
+import { FIELD } from "@/lib/fill";
 
 /**
  * Renders copy in which [[bracketed passages]] are real, visible blanks:
