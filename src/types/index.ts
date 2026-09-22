@@ -31,6 +31,18 @@ export interface Project {
   annotations: Annotation[];
   /** Plates are not identical: each project is composed differently. */
   layout: "spread" | "offset" | "pair";
+  /**
+   * An inner screen, not just the landing page: a reading view, a form, a
+   * dashboard. Shown smaller than the main plate and set apart with its own
+   * caption, so it reads as supporting evidence rather than a second hero.
+   */
+  secondPlate?: {
+    image: string;
+    imageAlt: string;
+    /** One line of context above the plate. */
+    caption: string;
+    annotations?: Annotation[];
+  };
 }
 
 export interface Post {

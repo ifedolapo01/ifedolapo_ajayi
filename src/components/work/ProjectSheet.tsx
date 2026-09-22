@@ -3,6 +3,7 @@ import { Reveal } from "@/components/sheet/Reveal";
 import { SpecTable } from "@/components/sheet/SpecTable";
 import { AnnotatedPlate } from "./AnnotatedPlate";
 import { ProjectBody, ProjectHeading, ProjectLink } from "./ProjectHeading";
+import { SecondPlate } from "./SecondPlate";
 
 const RATIO: Record<Project["discipline"], string> = {
   Product: "2.14",
@@ -60,6 +61,10 @@ export function ProjectSheet({ project, priority }: { project: Project; priority
             <ProjectBody project={{ ...project, premise: "" }} />
           </div>
         </Reveal>
+
+        <Reveal delay={40}>
+          <SecondPlate project={project} ratio={ratio} />
+        </Reveal>
       </article>
     );
   }
@@ -95,6 +100,10 @@ export function ProjectSheet({ project, priority }: { project: Project; priority
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={40}>
+          <SecondPlate project={project} ratio={ratio} />
+        </Reveal>
       </article>
     );
   }
@@ -126,6 +135,10 @@ export function ProjectSheet({ project, priority }: { project: Project; priority
           </div>
         </Reveal>
       </div>
+
+      <Reveal delay={40}>
+        <SecondPlate project={project} ratio={ratio} />
+      </Reveal>
     </article>
   );
 }
