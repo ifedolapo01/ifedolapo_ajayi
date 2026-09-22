@@ -12,8 +12,8 @@ import {
 /**
  * Experience as a record sheet: dates in the margin in tabular figures, the
  * role set large, the detail folded away until it is wanted. A recruiter can
- * read the whole history in one pass without opening anything — which is the
- * point of a résumé — and open the one entry they care about.
+ * read the whole history in one pass without opening anything: that is the
+ * point of a résumé. They can still open the one entry they care about.
  */
 export function Record() {
   return (
@@ -26,7 +26,7 @@ export function Record() {
                 <div className="grid w-full gap-x-8 gap-y-2 md:grid-cols-[9rem_1fr]">
                   <p className="nums label pt-1.5 md:pt-2.5">{post.period}</p>
                   <div>
-                    {/* AccordionHeader is already an h3 — this is its text. */}
+                    {/* AccordionHeader is already an h3: this is its text. */}
                     <span className="display block text-[clamp(1.5rem,5vw,1.875rem)] lg:text-[2rem]">
                       {post.role}
                     </span>

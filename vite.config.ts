@@ -5,7 +5,7 @@ import path from "node:path";
 export default defineConfig({
   plugins: [react()],
   // strictPort so the address never quietly moves: `npm run audit` and the
-  // README both assume 3000, and a silent fallback would break them.
+  // README both assume 3000 and a silent fallback would break them.
   server: { port: 3000, strictPort: true },
   preview: { port: 3000, strictPort: true },
   resolve: {

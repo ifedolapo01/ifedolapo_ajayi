@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 /**
  * Tracks which section owns the viewport so the margin rail can mark position.
  *
- * The section that *contains* a line a third of the way down the screen wins —
+ * The section that *contains* a line a third of the way down the screen wins,
  * not the section nearest to it. Nearest-wins hands the mark to the next
  * heading while you are still reading the section above it, which is exactly
  * when a position indicator most needs to be right.

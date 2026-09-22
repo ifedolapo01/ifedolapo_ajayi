@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   TEARDOWN — foundations
+   TEARDOWN: foundations
    Two inks on paper. "Paper" is the default; "Ink" inverts the stock, not
-   the concept — the vermilion annotation ink stays the annotation ink.
+   the concept: the vermilion annotation ink stays the annotation ink.
    ========================================================================== */
 
 @layer base {
@@ -14,7 +14,7 @@
     --paper-deep: 42 25% 89%;    /* the next section down the page */
     --paper-raised: 44 40% 97%;  /* a plate laid on the sheet      */
     --ink: 60 5% 10%;            /* warm black, never #000         */
-    --graphite: 43 9% 35%;       /* secondary text — clears 4.5:1 on both stocks */
+    --graphite: 43 9% 35%;       /* secondary text: clears 4.5:1 on both stocks */
     --vermilion: 15 79% 39%;     /* annotation ink. Used sparingly */
     --rule: 45 12% 76%;          /* hairlines                      */
 
@@ -87,7 +87,7 @@
   .label-ink { @apply label text-ink; }
   .label-mark { @apply label text-vermilion; }
 
-  /* Display type is set tight and slightly negative — headlines are objects,
+  /* Display type is set tight and slightly negative: headlines are objects,
      not sentences. */
   .display {
     @apply font-display font-normal leading-[0.92] tracking-[-0.025em];
@@ -112,7 +112,7 @@
   /* --- Fill-in fields ----------------------------------------------------- */
 
   /* Content Ifedolapo still needs to supply is shown as an unfilled field on
-     a form, not hidden. Honest, and on-concept. */
+     a form, not hidden. Honest and on-concept. */
   .field-blank {
     @apply font-mono text-[0.9em] text-graphite decoration-dotted underline-offset-4;
     text-decoration-line: underline;
@@ -129,7 +129,7 @@
    SCHEMATIC MODE
    The same component tree renders twice inside the workbench: once as built,
    once as drawn. Rather than maintaining two component trees that would drift
-   apart, the schematic layer is the *same* markup under a data attribute —
+   apart, the schematic layer is the *same* markup under a data attribute,
    so the x-ray can never show you a lie about the structure.
    ========================================================================== */
 
@@ -171,7 +171,7 @@
 }
 
 /* Content that is purely visual in the built version becomes hatching in the
-   drawn version — it is mass, not information. */
+   drawn version: it is mass, not information. */
 [data-variant="schematic"] [data-fill] {
   background-image: repeating-linear-gradient(
     -45deg,

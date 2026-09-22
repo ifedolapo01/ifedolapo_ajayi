@@ -18,9 +18,9 @@ function specsFor(project: Project) {
 }
 
 /**
- * One grammar, three compositions. Every sheet carries the same parts — mark,
- * title, spec table, premise, plate — but a page where six projects are laid
- * out identically reads as a list, and these are supposed to read as cases.
+ * One grammar, three compositions. Every sheet carries the same parts (mark,
+ * title, spec table, premise, plate), but a page where six projects are laid
+ * out identically reads as a list and these are supposed to read as cases.
  */
 export function ProjectSheet({ project, priority }: { project: Project; priority?: boolean }) {
   const ratio = RATIO[project.discipline];
@@ -99,7 +99,7 @@ export function ProjectSheet({ project, priority }: { project: Project; priority
     );
   }
 
-  // pair — plate and prose side by side, at equal weight.
+  // pair: plate and prose side by side, at equal weight.
   return (
     <article className="border-t border-ink pt-8 md:pt-10">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-10">

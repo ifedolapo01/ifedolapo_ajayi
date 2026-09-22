@@ -11,10 +11,10 @@ const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
  * Two stacked copies of the same panel, clipped against each other at the
  * thumb: everything left of it is built, everything right of it is drawn, so
  * the control is literally the seam you are dragging. It starts at the right
- * edge — the interface arrives finished, and you take it apart. The
+ * edge: the interface arrives finished and you take it apart. The
  * control is a real range input (Radix), so arrow keys, Home/End and touch all
- * drive it, and because the reveal is user-driven it behaves identically when
- * the visitor has reduced motion turned on — the only thing that is suppressed
+ * drive it. Because the reveal is user-driven it behaves identically when
+ * the visitor has reduced motion turned on: the only thing that is suppressed
  * is the one-time sweep that teaches the affordance.
  */
 export function Xray() {

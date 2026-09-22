@@ -7,8 +7,8 @@ export interface Spec {
 }
 
 /**
- * Where technologies live. A stack is a fact about a job — a row on a spec
- * sheet — not a badge collection, so it is set like one.
+ * Where technologies live. A stack is a fact about a job: a row on a spec
+ * sheet, not a badge collection, so it is set like one.
  */
 export function SpecTable({ specs, className }: { specs: Spec[]; className?: string }) {
   return (

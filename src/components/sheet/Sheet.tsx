@@ -3,8 +3,8 @@ import { cn } from "@/lib/utils";
 
 /**
  * The drawing area. Its left and right hairlines are the only persistent
- * decoration on the site, and they exist to make the grid legible — which is
- * the argument the whole thing is making.
+ * decoration on the site and exist to make the grid legible, which is the
+ * argument the whole thing is making.
  */
 export function Sheet({ children, className }: { children: ReactNode; className?: string }) {
   return (

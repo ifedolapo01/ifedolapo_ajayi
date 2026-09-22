@@ -13,9 +13,10 @@ import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 
 /**
- * The small-screen counterpart to the margin rail. Not the rail squashed —
- * a different object doing the same job: a marker that always states where you
- * are, and opens the full index on a tap. Thumb-reachable, one line tall.
+ * The small-screen counterpart to the margin rail: not the rail squashed,
+ * but a different object doing the same job. A marker that always states
+ * where you are and opens the full index on a tap. Thumb-reachable, one
+ * line tall.
  */
 export function PositionMarker({ active }: { active: string }) {
   const [open, setOpen] = useState(false);

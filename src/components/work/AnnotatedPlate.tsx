@@ -16,8 +16,8 @@ interface AnnotatedPlateProps {
 }
 
 /**
- * A screenshot you can interrogate. Pins are real buttons — hover, focus and
- * tap all open the note, and the pin owns the note through aria-controls, so
+ * A screenshot you can interrogate. Pins are real buttons: hover, focus and
+ * tap all open the note and the pin owns the note through aria-controls, so
  * the interaction exists for keyboard and screen reader users rather than only
  * for a mouse.
  *
@@ -84,7 +84,7 @@ export function AnnotatedPlate({
                   )}
                 >
                   {String.fromCharCode(65 + i)}
-                  <span className="sr-only"> — annotation</span>
+                  <span className="sr-only">, annotation</span>
                 </button>
 
                 {/* The leader line: it draws out of the mark toward the note. */}
@@ -133,7 +133,7 @@ export function AnnotatedPlate({
       {hasNotes && (
         <p className="label mt-3 flex items-center gap-2">
           <span className="inline-block h-1.5 w-1.5 bg-vermilion" aria-hidden />
-          {annotations.length} annotation{annotations.length === 1 ? "" : "s"} — open one
+          {annotations.length} annotation{annotations.length === 1 ? "" : "s"}: open one
         </p>
       )}
 

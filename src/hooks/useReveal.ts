@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Fires once, when an element first enters. Deliberately not reversible —
+ * Fires once, when an element first enters. Deliberately not reversible:
  * elements that re-animate on every pass are noise, not hierarchy.
  */
 export function useReveal<T extends HTMLElement>(rootMargin = "0px 0px -12% 0px") {

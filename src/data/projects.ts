@@ -1,7 +1,7 @@
 import type { Project } from "@/types";
 
 /**
- * Titles, descriptions, links, screenshots and stacks are real — carried over
+ * Titles, descriptions, links, screenshots and stacks are real, carried over
  * from the existing site. Everything that would require inventing a claim is a
  * fill-in field ([[…]]) so the sheet reads as a draft awaiting entry rather
  * than a finished lie. README.md lists every blank in one place.
@@ -20,12 +20,12 @@ export const projects: Project[] = [
     linkLabel: "beyondthepain.vercel.app",
     image: "/beyondthepain_img.png",
     imageAlt:
-      "The Beyond the Pain website — a platform for sharing stories about living with sickle cell disease.",
+      "The Beyond the Pain website: a platform for sharing stories about living with sickle cell disease.",
     premise:
-      "Sickle cell disease is common in Nigeria and badly understood by people who don't live with it. Beyond the Pain is a digital platform for sharing and reading real accounts of living with it — built so that the writing, not the interface, is what you notice.",
+      "Sickle cell disease is common in Nigeria and badly understood by people who don't live with it. Beyond the Pain is a digital platform for sharing and reading real accounts of living with it, built so that the writing, not the interface, is what you notice.",
     build: [
       "Built the full front end in Next.js and Tailwind CSS.",
-      "[[How stories get in — a form, a CMS, something you wrote by hand?]]",
+      "[[How stories get in: a form, a CMS, something you wrote by hand?]]",
       "[[A decision you made about reading: type size, measure, pacing, quiet]]",
       "[[Anything you had to solve that was harder than it looked]]",
     ],
@@ -59,14 +59,14 @@ export const projects: Project[] = [
     link: "https://urbanthreads-kappa.vercel.app/",
     linkLabel: "urbanthreads-kappa.vercel.app",
     image: "/urbanthreads_img.png",
-    // The screenshot below still shows the old "UrbanThreads Co." branding —
+    // The screenshot below still shows the old "UrbanThreads Co." branding;
     // swap it for a current one whenever there's a fresh shot to hand.
-    imageAlt: "The Gidiammini storefront — an e-commerce application for fashion products.",
+    imageAlt: "The Gidiammini storefront: an e-commerce application for fashion products.",
     premise:
-      "A storefront for buying and selling fashion. The interesting part of a shop is never the product grid — it's the cart: the one piece of state that has to survive navigation, stay correct, and never surprise anyone.",
+      "A storefront for buying and selling fashion. The interesting part of a shop is never the product grid. It's the cart: the one piece of state that has to survive navigation, stay correct and never surprise anyone.",
     build: [
       "Built in React with Redux Toolkit holding cart and catalogue state.",
-      "[[What lives in the store, and what you deliberately kept out of it]]",
+      "[[What lives in the store and what you deliberately kept out of it]]",
       "[[How the cart persists between visits]]",
       "[[A bug or edge case that taught you something]]",
     ],
@@ -103,9 +103,9 @@ export const projects: Project[] = [
       "A medical application for managing patient records and appointments. Health software is used by people under stress and by staff under time pressure, which makes clarity a functional requirement rather than a matter of taste.",
     build: [
       "Built the interface in React.",
-      "[[Which screens you built — records, scheduling, something else]]",
+      "[[Which screens you built: records, scheduling, something else]]",
       "[[How you handled dense information without it becoming noise]]",
-      "[[Current status — in progress, paused, shipped internally?]]",
+      "[[Current status: in progress, paused, shipped internally?]]",
     ],
     annotations: [
       {
@@ -120,7 +120,7 @@ export const projects: Project[] = [
   },
 ];
 
-/** Smaller pieces. Same grammar, less room — hierarchy is an argument too. */
+/** Smaller pieces. Same grammar, less room; hierarchy is an argument too. */
 export const alsoOnTheBench: Project[] = [
   {
     id: "city-bus",
@@ -174,7 +174,7 @@ export const alsoOnTheBench: Project[] = [
     image: "/portfolio_img.png",
     imageAlt: "The previous version of Ifedolapo Ajayi's portfolio website.",
     premise:
-      "The earlier portfolio — a straightforward Next.js site. Kept here because the distance between two versions of the same brief is worth showing.",
+      "The earlier portfolio: a straightforward Next.js site. Kept here because the distance between two versions of the same brief is worth showing.",
     build: [],
     annotations: [],
     layout: "pair",

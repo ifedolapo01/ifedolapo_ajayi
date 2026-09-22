@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 interface RevealProps {
   children: ReactNode;
-  /** Milliseconds. Kept small — stagger should be felt, not watched. */
+  /** Milliseconds. Kept small: stagger should be felt, not watched. */
   delay?: number;
   className?: string;
   as?: "div" | "li" | "section";

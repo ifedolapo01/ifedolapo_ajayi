@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils";
 
 /**
  * The margin of a drawing sheet: section numbers, a tick against the one you
- * are in. It never covers content — the sheet's own padding leaves the column
- * for it — and it is a plain list of anchors underneath, so it works with the
- * keyboard and reads correctly to a screen reader.
+ * are in. It never covers content, since the sheet's own padding leaves the
+ * column for it. It is also a plain list of anchors underneath, so it works
+ * with the keyboard and reads correctly to a screen reader.
  */
 export function MarginRail({ active }: { active: string }) {
   return (

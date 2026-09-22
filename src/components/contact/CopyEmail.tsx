@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Check, Copy } from "lucide-react";
 
 /**
- * The address is a mailto link first — that is what most people want and it
+ * The address is a mailto link first: that is what most people want and it
  * works without JavaScript. Copying is a separate, clearly labelled button
  * beside it, not a trick hidden on the link itself.
  */

@@ -5,7 +5,7 @@ import { Reveal } from "@/components/sheet/Reveal";
 import { Xray } from "@/components/workbench/Xray";
 
 /**
- * The first screen. No greeting, no job title in 72pt — a claim, and a working
+ * The first screen. No greeting, no job title in 72pt: a claim and a working
  * interface sitting next to it that you can take apart yourself.
  */
 export function Workbench() {

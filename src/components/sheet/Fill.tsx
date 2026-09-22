@@ -3,7 +3,7 @@ import { Fragment } from "react";
 const FIELD = /\[\[(.+?)\]\]/g;
 
 /**
- * Renders copy in which [[bracketed passages]] are real, visible blanks —
+ * Renders copy in which [[bracketed passages]] are real, visible blanks:
  * a field on a form that has not been filled in yet. Nothing on this site
  * invents a fact to cover a gap; it shows you the gap.
  */

@@ -16,7 +16,7 @@ function stored(): Stock | null {
 /**
  * State is seeded from storage during the first render, not in an effect.
  * Reading it in one effect and writing it in another races: the write lands
- * first, with the default still in state, and quietly overwrites the visitor's
+ * first, with the default still in state and quietly overwrites the visitor's
  * saved choice before the read has been applied.
  */
 function initial(): Stock {

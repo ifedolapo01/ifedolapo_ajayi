@@ -17,7 +17,7 @@ export interface Project {
   tagline: string;
   year: string;
   role: string;
-  /** Technologies live here — as facts about a piece of work, never a wall. */
+  /** Technologies live here: as facts about a piece of work, never a wall. */
   stack: string[];
   discipline: "Product" | "Interface design";
   link?: string;

@@ -1,7 +1,7 @@
 import type { SectionMeta } from "@/types";
 
 /**
- * Anything inside [[double brackets]] renders as an unfilled field — a blank
+ * Anything inside [[double brackets]] renders as an unfilled field: a blank
  * on a form. It is never rendered as if it were a fact. See <Fill />.
  */
 export const profile = {
@@ -24,7 +24,7 @@ export const profile = {
   /** The hero statement. The whole introduction is this one line. */
   statement: "Every interface you like is hiding work.",
   standfirst:
-    "I'm Ifedolapo Ajayi, a frontend engineer in Abuja. I build the part people actually touch — and I care about everything underneath it. Drag the control to see what I mean.",
+    "I'm Ifedolapo Ajayi, a frontend engineer in Abuja. I build the part people actually touch and care about everything underneath it. Drag the control to see what I mean.",
 } as const;
 
 export const sections: SectionMeta[] = [

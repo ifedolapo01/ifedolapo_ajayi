@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 
 /**
- * TEARDOWN — the design system.
+ * TEARDOWN: the design system.
  *
  * Two inks on paper. Every token below maps to a CSS custom property in
  * index.css so that "Paper" and "Ink" modes are a single attribute swap

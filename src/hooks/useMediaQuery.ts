@@ -2,7 +2,7 @@ import { useCallback, useSyncExternalStore } from "react";
 
 /**
  * useSyncExternalStore rather than useState + useEffect: a media query is an
- * external store, and subscribing to it this way means the first render is
+ * external store and subscribing to it this way means the first render is
  * already correct instead of correcting itself a frame later.
  */
 export function useMediaQuery(query: string): boolean {

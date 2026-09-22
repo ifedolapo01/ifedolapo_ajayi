@@ -26,7 +26,7 @@ const DialogOverlay = React.forwardRef<
 ));
 DialogOverlay.displayName = "DialogOverlay";
 
-/** Rises from the bottom edge — it is a sheet pulled up, not a box dropped in. */
+/** Rises from the bottom edge: it is a sheet pulled up, not a box dropped in. */
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & { closeLabel?: string }

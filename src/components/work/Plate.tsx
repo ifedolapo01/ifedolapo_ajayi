@@ -15,7 +15,7 @@ interface PlateProps {
 /**
  * Screenshots carry the argument on this site, so they get real treatment:
  * WebP with a srcset, a PNG fallback, an explicit box so nothing reflows while
- * they load, and lazy loading for everything below the first plate.
+ * they load and lazy loading for everything below the first plate.
  */
 export function Plate({ name, alt, ratio, sizes, priority = false, className }: PlateProps) {
   return (

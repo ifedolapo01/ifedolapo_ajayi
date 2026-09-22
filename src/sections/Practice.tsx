@@ -6,8 +6,8 @@ import { Plate } from "@/components/work/Plate";
 
 /**
  * Not a biography. The margin carries the opinions, the column carries the
- * story, and the spec table at the end carries the facts a recruiter is
- * actually scanning for — three different jobs, three different treatments.
+ * story and the spec table at the end carries the facts a recruiter is
+ * actually scanning for: three different jobs, three different treatments.
  */
 export function Practice() {
   return (

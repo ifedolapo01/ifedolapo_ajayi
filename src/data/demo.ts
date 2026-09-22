@@ -1,4 +1,4 @@
-/** Rows for the demo panel in the hero. Invented, and labelled as such on the page. */
+/** Rows for the demo panel in the hero. Invented and labelled as such on the page. */
 export interface Appointment {
   id: string;
   time: string;

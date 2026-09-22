@@ -5,9 +5,9 @@ import { Reveal } from "@/components/sheet/Reveal";
 import { CopyEmail } from "@/components/contact/CopyEmail";
 
 /**
- * The closing statement, and then the practical things. A colophon underneath
- * because this is a piece of work like any other on the page, and work gets
- * signed — including the part about which fields are still blank.
+ * The closing statement and then the practical things. A colophon underneath
+ * because this is a piece of work like any other on the page and work gets
+ * signed, including the part about which fields are still blank.
  */
 export function Contact() {
   return (
@@ -87,7 +87,7 @@ export function Contact() {
                 Set in Fraunces, Inter and IBM Plex Mono. Built with React, TypeScript, Tailwind CSS
                 and Radix primitives. The screenshots are the real products. Anything{" "}
                 <span className="field-blank">set like this</span> is a field I have not filled in
-                yet — I would rather show you the blank than make something up.
+                yet. I would rather show you the blank than make something up.
               </span>
             </p>
             <p className="label self-end md:text-right">

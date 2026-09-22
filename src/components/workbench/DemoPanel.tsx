@@ -17,7 +17,7 @@ interface DemoPanelProps {
 /**
  * ONE component, rendered twice by <Xray />: once as built, once as drawn.
  *
- * The schematic pass is not a separate illustration — it is this exact tree
+ * The schematic pass is not a separate illustration: it is this exact tree
  * under [data-variant="schematic"], where the CSS draws every [data-part] as a
  * labelled box. Two trees would drift apart and the x-ray would start showing
  * a structure that was never there.
@@ -42,8 +42,8 @@ export function DemoPanel({ variant, selectedId, onSelect }: DemoPanelProps) {
       <header data-part="header" className="flex items-baseline justify-between gap-4 pb-4">
         <div>
           <p className="label-sm font-mono uppercase text-graphite">Tuesday, 12 March</p>
-          {/* Set like a heading, not marked up as one — this is product chrome
-              inside a figure, and it would otherwise break the page outline. */}
+          {/* Set like a heading, not marked up as one: this is product chrome
+              inside a figure and it would otherwise break the page outline. */}
           <p className="pt-1 font-display text-xl tracking-[-0.02em] sm:text-2xl">Appointments</p>
         </div>
         <p data-part="count" data-chip className="rounded-full border border-rule px-2.5 py-1 font-mono text-label-sm uppercase text-graphite">
@@ -130,7 +130,7 @@ export function DemoPanel({ variant, selectedId, onSelect }: DemoPanelProps) {
             owned ? "mt-3 max-h-16 opacity-100" : "max-h-0 opacity-0",
           )}
         >
-          There is no record behind it — this panel exists to be taken apart.
+          There is no record behind it. This panel exists to be taken apart.
         </p>
       </div>
     </div>
